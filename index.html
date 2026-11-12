@@ -3,276 +3,208 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Ruth Yakubu — Data Analyst and Business Intelligence Professional. Explore analytics projects in SQL, Power BI, Excel, Python and Tableau.">
-  <meta name="theme-color" content="#102544">
-  <title>Ruth Yakubu | Data Analyst &amp; BI Professional</title>
+  <meta name="description" content="Ruth Yakubu — Data Analyst and Business Intelligence Professional. Turning data into clear insights that support better business decisions.">
+  <meta name="theme-color" content="#102746">
+  <title>Ruth Yakubu | Data Analyst &amp; Business Intelligence Professional</title>
   <style>
-    :root {
-      --navy: #102544;
-      --navy-2: #18385f;
-      --blue: #2f6fed;
-      --ink: #172235;
-      --muted: #66758a;
-      --paper: #ffffff;
-      --soft: #f3f6fb;
-      --line: #e3e9f2;
-      --shadow: 0 18px 50px rgba(16, 37, 68, .09);
-      --radius: 18px;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: var(--paper);
-      font-family: Inter, "Segoe UI", Arial, sans-serif;
-      line-height: 1.65;
-    }
-    a { color: inherit; }
-    .container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
-    .site-header {
-      position: sticky; top: 0; z-index: 20;
-      background: rgba(255,255,255,.94); backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--line);
-    }
-    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .brand { color: var(--navy); font-size: 1.08rem; font-weight: 800; text-decoration: none; letter-spacing: -.02em; }
-    .nav-links { display: flex; gap: 26px; align-items: center; }
-    .nav-links a { text-decoration: none; color: #43536a; font-size: .93rem; font-weight: 600; }
-    .nav-links a:hover { color: var(--blue); }
-    .menu-button { display: none; border: 1px solid var(--line); background: white; color: var(--navy); border-radius: 10px; padding: 9px 12px; font-weight: 700; }
-    .hero { background: linear-gradient(120deg, #f5f8fd 0%, #fff 62%); padding: 88px 0 82px; overflow: hidden; }
-    .hero-grid { display: grid; grid-template-columns: 1.35fr .65fr; align-items: center; gap: 58px; }
-    .eyebrow { color: var(--blue); font-weight: 800; font-size: .78rem; text-transform: uppercase; letter-spacing: .14em; }
-    h1 { color: var(--navy); font-size: clamp(2.5rem, 6vw, 4.65rem); line-height: 1.06; letter-spacing: -.055em; margin: 14px 0 18px; }
-    .hero h2 { color: var(--navy-2); font-size: clamp(1.15rem, 2.5vw, 1.55rem); margin: 0 0 18px; font-weight: 700; }
-    .hero-copy { color: var(--muted); font-size: 1.08rem; max-width: 650px; margin: 0 0 28px; }
-    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
-    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 20px; border-radius: 10px; text-decoration: none; font-weight: 750; font-size: .94rem; transition: transform .2s, box-shadow .2s; }
-    .button:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
-    .button-primary { background: var(--navy); color: white; }
-    .button-secondary { border: 1px solid #cbd6e5; color: var(--navy); background: white; }
-    .portrait-wrap { justify-self: center; width: min(300px, 100%); aspect-ratio: 1; padding: 12px; border-radius: 50%; background: linear-gradient(145deg, #dce8fb, #fff); box-shadow: var(--shadow); }
-    .portrait-wrap img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 5px solid white; }
-    section { padding: 82px 0; }
-    .section-heading { max-width: 690px; margin-bottom: 34px; }
-    .section-heading h2 { color: var(--navy); font-size: clamp(1.9rem, 4vw, 2.65rem); line-height: 1.15; letter-spacing: -.04em; margin: 9px 0 12px; }
-    .section-heading p { color: var(--muted); margin: 0; }
-    .about-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 42px; align-items: start; }
-    .about-copy p { color: #536176; margin-top: 0; }
-    .highlight-panel { background: var(--soft); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; }
-    .highlight-panel h3 { color: var(--navy); margin: 0 0 12px; }
-    .highlight-panel ul { padding-left: 19px; margin: 0; color: #536176; }
-    .skills { background: var(--soft); }
-    .skill-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
-    .skill { background: white; border: 1px solid var(--line); border-radius: 14px; padding: 20px 14px; text-align: center; color: var(--navy); font-weight: 800; box-shadow: 0 5px 18px rgba(16,37,68,.035); }
-    .skill span { display: block; color: var(--muted); font-size: .78rem; font-weight: 500; margin-top: 5px; }
-    .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-    .project-card { overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: white; box-shadow: 0 8px 28px rgba(16,37,68,.055); transition: transform .2s, box-shadow .2s; }
-    .project-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
-    .project-card img { display: block; width: 100%; height: 190px; object-fit: cover; background: var(--soft); }
-    .project-body { padding: 20px; }
-    .project-body h3 { color: var(--navy); margin: 0 0 7px; font-size: 1.12rem; }
-    .project-body p { color: var(--muted); margin: 0 0 15px; font-size: .92rem; }
-    .project-link { color: var(--blue); text-decoration: none; font-weight: 800; font-size: .9rem; }
-    .project-link:hover { text-decoration: underline; }
-    .cta { background: var(--navy); color: white; text-align: center; }
-    .cta .eyebrow { color: #a9c7ff; }
-    .cta h2 { font-size: clamp(1.9rem, 4vw, 2.7rem); line-height: 1.15; margin: 10px 0 14px; letter-spacing: -.04em; }
-    .cta p { color: #d4deeb; max-width: 660px; margin: 0 auto 25px; }
-    .cta .button-primary { background: white; color: var(--navy); }
-    .cta .button-secondary { color: white; border-color: #6d809b; background: transparent; }
-    footer { padding: 25px 0; color: var(--muted); font-size: .88rem; text-align: center; border-top: 1px solid var(--line); }
-    footer a { color: var(--navy); font-weight: 700; text-decoration: none; }
-    @media (max-width: 850px) {
-      .hero-grid, .about-grid { grid-template-columns: 1fr; }
-      .portrait-wrap { grid-row: 1; width: 220px; }
-      .hero { padding: 60px 0; }
-      .project-grid { grid-template-columns: repeat(2, 1fr); }
-      .skill-grid { grid-template-columns: repeat(3, 1fr); }
-    }
-    @media (max-width: 620px) {
-      .container { width: min(100% - 30px, 1120px); }
-      .nav { min-height: 66px; flex-wrap: wrap; padding: 12px 0; }
-      .menu-button { display: block; }
-      .nav-links { display: none; width: 100%; flex-direction: column; align-items: flex-start; gap: 14px; padding: 8px 0 12px; }
-      .nav-links.open { display: flex; }
-      section { padding: 62px 0; }
-      .project-grid { grid-template-columns: 1fr; }
-      .skill-grid { grid-template-columns: repeat(2, 1fr); }
-      .hero-copy { font-size: 1rem; }
-      .portrait-wrap { width: 185px; }
-    }
+    :root{--navy:#102746;--navy2:#183b63;--blue:#2e6da4;--ink:#172536;--muted:#657487;--line:#e4eaf0;--pale:#f4f7fa;--white:#fff;--accent:#d8e8f6;--shadow:0 18px 50px rgba(16,39,70,.09)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:#fff;line-height:1.7}a{color:inherit;text-decoration:none}.wrap{width:min(1120px,calc(100% - 44px));margin:auto}
+    .topbar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{font-weight:800;letter-spacing:-.04em;color:var(--navy);font-size:1.18rem}.brand span{color:var(--blue)}.navlinks{display:flex;align-items:center;gap:28px;font-size:.91rem;color:#46566a}.navlinks a:hover{color:var(--blue)}.nav-cta{background:var(--navy);color:#fff!important;padding:10px 17px;border-radius:7px}.menu{display:none;border:0;background:none;color:var(--navy);font-size:1.6rem}
+    .hero{background:linear-gradient(115deg,#f4f7fa 0%,#fff 64%);padding:96px 0 86px;overflow:hidden;position:relative}.hero:after{content:"";position:absolute;width:420px;height:420px;border:1px solid #dce8f2;border-radius:50%;right:-150px;top:-130px;box-shadow:0 0 0 48px rgba(220,232,242,.22),0 0 0 96px rgba(220,232,242,.13)}.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--blue);font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.15em}.eyebrow:before{content:"";width:28px;height:2px;background:var(--blue)}h1{font-size:clamp(2.8rem,6vw,5.1rem);line-height:1.04;letter-spacing:-.065em;color:var(--navy);margin:22px 0 16px;max-width:850px}.hero h2{font-size:clamp(1.1rem,2vw,1.45rem);font-weight:600;color:#40566e;margin:0 0 20px}.hero p{font-size:1.08rem;color:#5c6c7e;max-width:690px;margin:0}.actions{display:flex;flex-wrap:wrap;gap:13px;margin-top:32px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 20px;border-radius:7px;font-weight:700;font-size:.92rem;transition:.2s}.btn.primary{background:var(--navy);color:#fff;box-shadow:0 8px 20px rgba(16,39,70,.16)}.btn.primary:hover{background:var(--navy2);transform:translateY(-2px)}.btn.secondary{border:1px solid #cbd6e1;color:var(--navy);background:#fff}.btn.secondary:hover{border-color:var(--blue);transform:translateY(-2px)}
+    .proof{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:65px;max-width:790px;border-top:1px solid #dce4ec;padding-top:25px}.proof div{padding:0 25px;border-right:1px solid #dce4ec}.proof div:first-child{padding-left:0}.proof div:last-child{border:0}.proof strong{display:block;font-size:1.5rem;color:var(--navy);letter-spacing:-.04em}.proof span{font-size:.83rem;color:var(--muted)}
+    section{padding:88px 0}.section-head{max-width:690px;margin-bottom:38px}.kicker{font-size:.75rem;text-transform:uppercase;letter-spacing:.16em;color:var(--blue);font-weight:800}.section-head h2{font-size:clamp(2rem,4vw,3rem);line-height:1.15;letter-spacing:-.05em;color:var(--navy);margin:10px 0 14px}.section-head p{margin:0;color:var(--muted);font-size:1rem}
+    .about-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:60px;align-items:start}.about-copy p{color:#536477;margin:0 0 17px}.about-note{background:var(--pale);border:1px solid var(--line);padding:28px;border-radius:12px}.about-note h3{color:var(--navy);margin:0 0 14px;font-size:1rem}.about-note ul{padding-left:18px;margin:0;color:#58697b}.about-note li{margin:8px 0}
+    .skills{background:var(--pale)}.skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.skill-card{background:#fff;border:1px solid var(--line);border-radius:11px;padding:25px}.skill-card .num{font-size:.75rem;color:var(--blue);font-weight:800;letter-spacing:.12em}.skill-card h3{margin:9px 0;color:var(--navy);font-size:1.1rem}.skill-card p{margin:0;color:var(--muted);font-size:.92rem}
+    .projects{display:grid;gap:22px}.project{display:grid;grid-template-columns: .9fr 1.1fr;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 8px 28px rgba(16,39,70,.045)}.project-visual{background:linear-gradient(145deg,#eaf1f7,#dbe7f1);min-height:270px;display:flex;align-items:center;justify-content:center;padding:22px;position:relative}.project-visual img{width:100%;height:100%;max-height:300px;object-fit:contain;border-radius:7px}.project-visual .visual-label{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:#45627f;font-weight:800;text-align:center}.project-body{padding:30px 34px}.tagline{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);font-weight:800}.project-body h3{font-size:1.45rem;line-height:1.25;color:var(--navy);margin:9px 0 12px;letter-spacing:-.03em}.project-body p{color:#5d6d7e;margin:0 0 15px}.project-body ul{padding-left:19px;margin:0 0 18px;color:#506174;font-size:.92rem}.project-body li{margin:6px 0}.tags{display:flex;flex-wrap:wrap;gap:7px;margin:16px 0 20px}.tags span{font-size:.75rem;color:#36516d;background:#edf3f8;border-radius:30px;padding:5px 10px}.project-links{display:flex;gap:18px;flex-wrap:wrap;color:var(--blue);font-weight:750;font-size:.88rem}.project-links a:hover{text-decoration:underline}
+    .experience{background:var(--pale)}.experience-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.experience-card{background:#fff;border:1px solid var(--line);border-radius:11px;padding:25px}.experience-card h3{color:var(--navy);margin:0 0 8px}.experience-card p{color:var(--muted);margin:0;font-size:.94rem}
+    .credentials{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.credential{border:1px solid var(--line);border-radius:9px;padding:18px 20px}.credential strong{display:block;color:var(--navy)}.credential span{font-size:.88rem;color:var(--muted)}
+    .contact{background:var(--navy);color:#fff}.contact .kicker{color:#a9c9e5}.contact .section-head h2{color:#fff}.contact .section-head p{color:#c2cfdd}.contact-panel{display:flex;justify-content:space-between;align-items:center;gap:25px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.2);padding-top:28px}.contact-panel p{margin:0;color:#d5e0ea}.contact .btn.primary{background:#fff;color:var(--navy)}.contact .btn.secondary{background:transparent;color:#fff;border-color:rgba(255,255,255,.45)}
+    footer{padding:25px 0;color:#718093;font-size:.82rem}.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer-links{display:flex;gap:18px}
+    @media(max-width:800px){.navlinks{display:none;position:absolute;top:76px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);padding:20px 24px;flex-direction:column;align-items:flex-start;gap:17px}.navlinks.open{display:flex}.menu{display:block}.about-grid{grid-template-columns:1fr;gap:25px}.skill-grid{grid-template-columns:1fr 1fr}.project{grid-template-columns:1fr}.project-visual{min-height:210px}.experience-grid,.credentials{grid-template-columns:1fr}.hero{padding:75px 0 65px}.proof{margin-top:45px}}
+    @media(max-width:520px){.wrap{width:min(100% - 32px,1120px)}section{padding:65px 0}.skill-grid{grid-template-columns:1fr}.proof{grid-template-columns:1fr;gap:16px}.proof div{padding:0;border:0}.hero p{font-size:1rem}.project-body{padding:24px}.nav{height:68px}.navlinks{top:68px}}
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="#home">RUTH YAKUBU</a>
-      <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
-      <nav class="nav-links" id="nav-links" aria-label="Main navigation">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
+<header class="topbar">
+  <div class="wrap nav">
+    <a class="brand" href="#home">RUTH <span>YAKUBU.</span></a>
+    <button class="menu" aria-label="Open navigation" aria-expanded="false" onclick="toggleMenu()">☰</button>
+    <nav class="navlinks" id="navlinks">
+      <a href="#about" onclick="closeMenu()">About</a><a href="#skills" onclick="closeMenu()">Expertise</a><a href="#projects" onclick="closeMenu()">Projects</a><a href="#experience" onclick="closeMenu()">Experience</a><a href="#credentials" onclick="closeMenu()">Credentials</a><a class="nav-cta" href="#contact" onclick="closeMenu()">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="wrap">
+      <div class="eyebrow">Data Analytics · Business Intelligence · Strategy</div>
+      <h1>Ruth Yakubu<span style="color:#2e6da4">.</span></h1>
+      <h2>Data Analyst &amp; Business Intelligence Professional</h2>
+      <p>I turn complex data into clear, actionable insights that help people and organisations understand performance, identify opportunities and make better-informed decisions. My work combines analytical thinking, technical problem-solving and practical business context.</p>
+      <div class="actions">
+        <a class="btn primary" href="#projects">Explore Selected Work <span>→</span></a>
+        <a class="btn secondary" href="https://flowcv.com/resume/t95bqtpn93ng" target="_blank" rel="noopener">View Resume ↗</a>
+      </div>
+      <div class="proof">
+        <div><strong>14 Years</strong><span>Technology &amp; Engineering journey</span></div>
+        <div><strong>6 Years</strong><span>Experience in the data space</span></div>
+        <div><strong>End-to-End</strong><span>Analytics &amp; BI project delivery</span></div>
+      </div>
     </div>
-  </header>
+  </section>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Welcome to my portfolio</div>
-          <h1>Hi, I'm Ruth Yakubu.</h1>
-          <h2>Data Analyst | Business Intelligence Professional</h2>
-          <p class="hero-copy">I turn data into clear insights that help people and organisations understand performance, identify opportunities and make better-informed decisions. Explore my work across data analysis and business intelligence.</p>
-          <div class="actions">
-            <a class="button button-primary" href="#projects">Explore my projects</a>
-            <a class="button button-secondary" href="https://flowcv.com/resume/t95bqtpn93ng" target="_blank" rel="noopener">View my resume</a>
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head"><div class="kicker">Professional Profile</div><h2>Connecting technical analysis with business understanding.</h2><p>A practical, insight-led approach to working with data—from understanding the question to communicating what the numbers mean.</p></div>
+      <div class="about-grid">
+        <div class="about-copy">
+          <p>My professional journey is grounded in technology and engineering, with an academic background in Electronics and Computer Engineering. Over the years, I have developed a strong interest in how data can be used to explain business performance, reveal patterns and support better decisions.</p>
+          <p>Since moving into the data space, I have continued to build and apply skills across data preparation, analysis, visualisation and business intelligence. I work with tools including Excel, SQL, Power BI, Python and Tableau to transform raw information into structured analysis and meaningful reporting.</p>
+          <p>Alongside analytical work, I teach and mentor people developing practical data skills. This experience strengthens my ability to explain technical concepts clearly, ask better questions and communicate findings to different audiences.</p>
+        </div>
+        <aside class="about-note">
+          <h3>Areas of professional focus</h3>
+          <ul><li>Business intelligence and performance reporting</li><li>Data cleaning, transformation and modelling</li><li>Dashboard development and insight communication</li><li>Analytical problem-solving and decision support</li><li>Data education, mentoring and capability development</li></ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="skills" id="skills">
+    <div class="wrap">
+      <div class="section-head"><div class="kicker">Technical Capabilities</div><h2>Tools are only as useful as the questions they help answer.</h2><p>My toolkit supports the full analytical workflow: preparing data, exploring it, modelling it and presenting the findings.</p></div>
+      <div class="skill-grid">
+        <article class="skill-card"><div class="num">01 / ANALYSE</div><h3>Data Analysis</h3><p>Microsoft Excel, SQL, Python, R, exploratory data analysis, data validation and analytical reporting.</p></article>
+        <article class="skill-card"><div class="num">02 / TRANSFORM</div><h3>Data Preparation</h3><p>Power Query, data cleaning, transformation, shaping, quality checks and preparation for analysis.</p></article>
+        <article class="skill-card"><div class="num">03 / COMMUNICATE</div><h3>Business Intelligence</h3><p>Power BI, Tableau, DAX, data modelling, dashboard design, visual storytelling and KPI reporting.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head"><div class="kicker">Selected Work</div><h2>Projects built around questions that matter.</h2><p>Each case study presents the business context, analytical process and insights—not just the tools used.</p></div>
+      <div class="projects">
+        <article class="project">
+          <div class="project-visual" style="display:block;padding:28px">
+            <div style="font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;font-weight:800;color:#45627f;margin-bottom:15px">Workforce snapshot</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+              <div style="background:#fff;border-radius:9px;padding:17px"><div style="font-size:1.65rem;font-weight:800;color:#102746">500</div><div style="font-size:.76rem;color:#657487">Employee records</div></div>
+              <div style="background:#fff;border-radius:9px;padding:17px"><div style="font-size:1.65rem;font-weight:800;color:#102746">380</div><div style="font-size:.76rem;color:#657487">Active employees</div></div>
+              <div style="background:#fff;border-radius:9px;padding:17px"><div style="font-size:1.65rem;font-weight:800;color:#102746">120</div><div style="font-size:.76rem;color:#657487">Exited employees</div></div>
+              <div style="background:#fff;border-radius:9px;padding:17px"><div style="font-size:1.65rem;font-weight:800;color:#102746">82.2%</div><div style="font-size:.76rem;color:#657487">Full-time workforce</div></div>
+            </div>
+            <div style="font-size:.76rem;color:#45627f;margin-top:13px">Illustrative project indicators · Power BI</div>
           </div>
-        </div>
-        <div class="portrait-wrap">
-          <img src="images/MY%20PIX.JPG" alt="Portrait of Ruth Yakubu">
-        </div>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="container">
-        <div class="section-heading">
-          <div class="eyebrow">A little about me</div>
-          <h2>Connecting data, business questions and practical decisions.</h2>
-          <p>I combine analytical skills with an understanding of business needs and a passion for making data concepts easier to understand.</p>
-        </div>
-        <div class="about-grid">
-          <div class="about-copy">
-            <p>I'm Ruth Yakubu, a Data Analyst and Business Intelligence Professional with an interest in transforming raw data into useful information. My work involves exploring datasets, cleaning and analysing information, identifying patterns, and communicating findings through clear reports and visualisations.</p>
-            <p>I have worked with datasets including flight ticket pricing data with more than 300,000 rows, using analytical tools to explore trends and present insights. I also enjoy helping learners build confidence in data analytics through practical explanations, exercises and project-based learning.</p>
-            <p>I value clear communication, thoughtful analysis and recommendations that connect findings to real-world questions.</p>
+          <div class="project-body">
+            <div class="tagline">Featured Case Study · Human Resources</div>
+            <h3>HR Workforce Analytics &amp; Business Intelligence Dashboard</h3>
+            <p>An end-to-end analysis of 500 employee records to examine workforce composition, employee demographics, employment status, salary indicators and organisational patterns. The project translates HR data into a structured view that can support workforce planning and people-related decisions.</p>
+            <ul><li>Prepared and transformed raw HR records using Power Query.</li><li>Developed a data model and DAX measures to support workforce analysis.</li><li>Examined employee distribution, active and exited staff, location, department, employment type and salary indicators.</li><li>Key workforce snapshot: 380 active employees and 120 exited employees within 500 records; 82.2% of the workforce is full-time.</li></ul>
+            <div class="tags"><span>Power BI</span><span>Power Query</span><span>DAX</span><span>Data Modelling</span><span>HR Analytics</span></div>
+            <div class="project-links"><a href="https://github.com/Ruttysmith/HR-Workforce-Analysis" target="_blank" rel="noopener">Explore Case Study ↗</a></div>
           </div>
-          <aside class="highlight-panel">
-            <h3>What I bring</h3>
-            <ul>
-              <li>Data cleaning, preparation and analysis</li>
-              <li>SQL querying and data exploration</li>
-              <li>Dashboard development and reporting</li>
-              <li>Business-focused insight communication</li>
-              <li>Data analytics teaching and mentorship</li>
-            </ul>
-          </aside>
+        </article>
+
+        <article class="project">
+          <div class="project-visual"><img src="images/PowerBI%20Project-1.png" alt="Power BI sales analytics project preview" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="visual-label" style="display:none">Power BI<br>Sales &amp; Business Insights</div></div>
+          <div class="project-body">
+            <div class="tagline">Business Intelligence · Sales Performance</div>
+            <h3>Sales Performance &amp; Business Insights</h3>
+            <p>A Power BI project focused on analysing sales performance and presenting business information through interactive visual reporting. The work demonstrates dashboard development, analytical thinking and the communication of patterns across business data.</p>
+            <div class="tags"><span>Power BI</span><span>DAX</span><span>Data Visualisation</span><span>Business Reporting</span></div>
+            <div class="project-links"><a href="https://github.com/Ruttysmith/POWERBI-PROJECT" target="_blank" rel="noopener">View Power BI Projects ↗</a></div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-visual"><img src="images/SQL%20Project-1.png" alt="SQL data analysis project preview" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="visual-label" style="display:none">SQL<br>Data Exploration &amp; Analysis</div></div>
+          <div class="project-body">
+            <div class="tagline">Data Analysis · Querying</div>
+            <h3>SQL Analysis &amp; Data Exploration</h3>
+            <p>A collection of SQL projects demonstrating how relational data can be queried, combined and summarised to answer analytical questions and produce structured outputs for reporting.</p>
+            <div class="tags"><span>SQL</span><span>Joins</span><span>Aggregations</span><span>Data Exploration</span></div>
+            <div class="project-links"><a href="https://github.com/Ruttysmith/SQL-PROJECTS" target="_blank" rel="noopener">Explore SQL Projects ↗</a></div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-visual"><img src="images/Excel%20Project-1.png" alt="Excel analytics project preview" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="visual-label" style="display:none">Excel<br>Analysis &amp; Reporting</div></div>
+          <div class="project-body">
+            <div class="tagline">Data Analysis · Spreadsheet Modelling</div>
+            <h3>Excel Analytics &amp; Reporting</h3>
+            <p>Practical Excel work involving data preparation, analysis and reporting, with a focus on organising information and making results easier to interpret.</p>
+            <div class="tags"><span>Microsoft Excel</span><span>Data Cleaning</span><span>PivotTables</span><span>Reporting</span></div>
+            <div class="project-links"><a href="https://github.com/Ruttysmith/EXCEL-PROJECTS" target="_blank" rel="noopener">Explore Excel Projects ↗</a></div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-visual"><img src="images/Python%20Project-1.png" alt="Python data analysis project preview" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="visual-label" style="display:none">Python<br>Data Analysis</div></div>
+          <div class="project-body">
+            <div class="tagline">Programming · Data Analysis</div>
+            <h3>Python for Data Analysis</h3>
+            <p>Analytical projects using Python to work with datasets, explore patterns and support data-driven problem-solving.</p>
+            <div class="tags"><span>Python</span><span>Data Analysis</span><span>Exploratory Analysis</span></div>
+            <div class="project-links"><a href="https://github.com/Ruttysmith/PYTHON-PROJECTS" target="_blank" rel="noopener">Explore Python Projects ↗</a></div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-visual"><img src="images/Tableau%20Project-1.png" alt="Tableau visual analytics project preview" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="visual-label" style="display:none">Tableau<br>Visual Analytics</div></div>
+          <div class="project-body">
+            <div class="tagline">Visual Analytics · Data Storytelling</div>
+            <h3>Tableau Visualisation Projects</h3>
+            <p>Data visualisation work focused on presenting information clearly and helping audiences explore trends, comparisons and patterns.</p>
+            <div class="tags"><span>Tableau</span><span>Visualisation</span><span>Storytelling</span></div>
+            <div class="project-links"><a href="https://public.tableau.com/app/profile/rutty" target="_blank" rel="noopener">View Tableau Public Profile ↗</a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="experience" id="experience">
+    <div class="wrap">
+      <div class="section-head"><div class="kicker">Beyond the Dashboard</div><h2>Professional experience that shapes how I work.</h2><p>My perspective combines technical foundations, analytical practice and the ability to make knowledge accessible.</p></div>
+      <div class="experience-grid">
+        <article class="experience-card"><h3>Data Analysis &amp; Business Intelligence</h3><p>Developing analytical projects and reporting solutions that turn raw information into useful findings, with an emphasis on clear methodology and practical interpretation.</p></article>
+        <article class="experience-card"><h3>Data Education &amp; Mentorship</h3><p>Teaching and guiding learners through data concepts, tools and practical projects—building confidence in analysis, problem-solving and communicating insights.</p></article>
+        <article class="experience-card"><h3>Technology &amp; Engineering Foundation</h3><p>Bringing a technology and engineering perspective to analytical work, supported by an academic background in Electronics and Computer Engineering.</p></article>
+        <article class="experience-card"><h3>Independent Projects &amp; Continuous Practice</h3><p>Applying and extending analytical skills through project work, experimentation and ongoing development across the data ecosystem.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="credentials">
+    <div class="wrap">
+      <div class="section-head"><div class="kicker">Professional Development</div><h2>Credentials &amp; continuous learning.</h2><p>Ongoing learning supports my ability to work across evolving analytical tools, methods and business needs.</p></div>
+      <div class="credentials">
+        <div class="credential"><strong>Electronics and Computer Engineering</strong><span>Academic background</span></div>
+        <div class="credential"><strong>Data Analytics &amp; Data Science</strong><span>Structured learning and continuous professional development</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="section-head"><div class="kicker">Connect</div><h2>Let's turn data into better decisions.</h2><p>For data analytics opportunities, business intelligence projects, consulting, training and professional collaboration, connect with me through the links below.</p></div>
+      <div class="contact-panel">
+        <p>Explore my work or get in touch to discuss a potential collaboration.</p>
+        <div class="actions" style="margin:0">
+          <a class="btn primary" href="https://github.com/Ruttysmith" target="_blank" rel="noopener">GitHub Profile ↗</a>
+          <a class="btn secondary" href="https://flowcv.com/resume/t95bqtpn93ng" target="_blank" rel="noopener">Resume ↗</a>
         </div>
       </div>
-    </section>
-
-    <section class="skills" id="skills">
-      <div class="container">
-        <div class="section-heading">
-          <div class="eyebrow">Tools &amp; capabilities</div>
-          <h2>Tools I use to work with data</h2>
-          <p>My toolkit supports data preparation, analysis, visualisation and communication.</p>
-        </div>
-        <div class="skill-grid">
-          <div class="skill">SQL<span>Querying &amp; exploration</span></div>
-          <div class="skill">Power BI<span>Dashboards &amp; reporting</span></div>
-          <div class="skill">Excel<span>Analysis &amp; reporting</span></div>
-          <div class="skill">Python<span>Data analysis</span></div>
-          <div class="skill">Tableau<span>Data visualisation</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <div class="container">
-        <div class="section-heading">
-          <div class="eyebrow">Selected work</div>
-          <h2>Explore my projects</h2>
-          <p>Browse projects by tool. Each collection opens my work on the relevant platform. I am continuing to build out detailed case studies and project explanations.</p>
-        </div>
-        <div class="project-grid">
-          <article class="project-card">
-            <img src="images/PowerBI%20Project-1.png" alt="Power BI project preview">
-            <div class="project-body">
-              <h3>Power BI Projects</h3>
-              <p>Business intelligence, interactive dashboards and visual reporting.</p>
-              <a class="project-link" href="https://github.com/Ruttysmith/POWERBI-PROJECT" target="_blank" rel="noopener">View Power BI projects →</a>
-            </div>
-          </article>
-          <article class="project-card">
-            <img src="images/SQL%20Project-1.png" alt="SQL project preview">
-            <div class="project-body">
-              <h3>SQL Projects</h3>
-              <p>Querying, data exploration and analysis using SQL.</p>
-              <a class="project-link" href="https://github.com/Ruttysmith/SQL-PROJECTS" target="_blank" rel="noopener">View SQL projects →</a>
-            </div>
-          </article>
-          <article class="project-card">
-            <img src="images/Excel%20Project-1.png" alt="Excel project preview">
-            <div class="project-body">
-              <h3>Excel Projects</h3>
-              <p>Spreadsheet-based analysis, reporting and data preparation.</p>
-              <a class="project-link" href="https://github.com/Ruttysmith/EXCEL-PROJECTS" target="_blank" rel="noopener">View Excel projects →</a>
-            </div>
-          </article>
-          <article class="project-card">
-            <img src="images/Python%20Project-1.png" alt="Python project preview">
-            <div class="project-body">
-              <h3>Python Projects</h3>
-              <p>Data analysis and exploration using Python.</p>
-              <a class="project-link" href="https://github.com/Ruttysmith/PYTHON-PROJECTS" target="_blank" rel="noopener">View Python projects →</a>
-            </div>
-          </article>
-          <article class="project-card">
-            <img src="images/Tableau%20Project-1.png" alt="Tableau project preview">
-            <div class="project-body">
-              <h3>Tableau Projects</h3>
-              <p>Visual analytics and interactive data presentations.</p>
-              <a class="project-link" href="https://public.tableau.com/app/profile/rutty" target="_blank" rel="noopener">View Tableau projects →</a>
-            </div>
-          </article>
-          <article class="project-card">
-            <img src="images/R%20PROJECT.jpg" alt="R project preview">
-            <div class="project-body">
-              <h3>R Projects</h3>
-              <p>Explore my work and practice with the R programming language.</p>
-              <a class="project-link" href="https://github.com/Ruttysmith/R" target="_blank" rel="noopener">View R projects →</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta" id="contact">
-      <div class="container">
-        <div class="eyebrow">Let's connect</div>
-        <h2>Have a data project or opportunity in mind?</h2>
-        <p>I'm open to conversations about data analysis, business intelligence, collaboration and opportunities to create value with data.</p>
-        <div class="actions" style="justify-content:center">
-          <a class="button button-primary" href="https://github.com/Ruttysmith" target="_blank" rel="noopener">Connect on GitHub</a>
-          <a class="button button-secondary" href="https://public.tableau.com/app/profile/rutty" target="_blank" rel="noopener">View my Tableau profile</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">© <span id="year"></span> Ruth Yakubu. All rights reserved.</div>
-  </footer>
-  <script>
-    const menuButton = document.querySelector('.menu-button');
-    const navLinks = document.querySelector('.nav-links');
-    menuButton.addEventListener('click', () => {
-      const isOpen = navLinks.classList.toggle('open');
-      menuButton.setAttribute('aria-expanded', String(isOpen));
-    });
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        menuButton.setAttribute('aria-expanded', 'false');
-      });
-    });
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap footer-inner"><span>© <span id="year"></span> Ruth Yakubu. All rights reserved.</span><div class="footer-links"><a href="https://github.com/Ruttysmith" target="_blank" rel="noopener">GitHub</a><a href="https://public.tableau.com/app/profile/rutty" target="_blank" rel="noopener">Tableau</a></div></div></footer>
+<script>
+  function toggleMenu(){const n=document.getElementById('navlinks');const b=document.querySelector('.menu');n.classList.toggle('open');b.setAttribute('aria-expanded',n.classList.contains('open'))}
+  function closeMenu(){document.getElementById('navlinks').classList.remove('open');document.querySelector('.menu').setAttribute('aria-expanded','false')}
+  document.getElementById('year').textContent=new Date().getFullYear();
+</script>
 </body>
 </html>
