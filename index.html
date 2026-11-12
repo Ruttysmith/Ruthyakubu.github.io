@@ -1,247 +1,278 @@
-<!DOCTYPE HTML>
-<!--
-	Prologue by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Ruth Yakubu | Data Science Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ruth Yakubu — Data Analyst and Business Intelligence Professional. Explore analytics projects in SQL, Power BI, Excel, Python and Tableau.">
+  <meta name="theme-color" content="#102544">
+  <title>Ruth Yakubu | Data Analyst &amp; BI Professional</title>
+  <style>
+    :root {
+      --navy: #102544;
+      --navy-2: #18385f;
+      --blue: #2f6fed;
+      --ink: #172235;
+      --muted: #66758a;
+      --paper: #ffffff;
+      --soft: #f3f6fb;
+      --line: #e3e9f2;
+      --shadow: 0 18px 50px rgba(16, 37, 68, .09);
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      line-height: 1.65;
+    }
+    a { color: inherit; }
+    .container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .site-header {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(255,255,255,.94); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { color: var(--navy); font-size: 1.08rem; font-weight: 800; text-decoration: none; letter-spacing: -.02em; }
+    .nav-links { display: flex; gap: 26px; align-items: center; }
+    .nav-links a { text-decoration: none; color: #43536a; font-size: .93rem; font-weight: 600; }
+    .nav-links a:hover { color: var(--blue); }
+    .menu-button { display: none; border: 1px solid var(--line); background: white; color: var(--navy); border-radius: 10px; padding: 9px 12px; font-weight: 700; }
+    .hero { background: linear-gradient(120deg, #f5f8fd 0%, #fff 62%); padding: 88px 0 82px; overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: 1.35fr .65fr; align-items: center; gap: 58px; }
+    .eyebrow { color: var(--blue); font-weight: 800; font-size: .78rem; text-transform: uppercase; letter-spacing: .14em; }
+    h1 { color: var(--navy); font-size: clamp(2.5rem, 6vw, 4.65rem); line-height: 1.06; letter-spacing: -.055em; margin: 14px 0 18px; }
+    .hero h2 { color: var(--navy-2); font-size: clamp(1.15rem, 2.5vw, 1.55rem); margin: 0 0 18px; font-weight: 700; }
+    .hero-copy { color: var(--muted); font-size: 1.08rem; max-width: 650px; margin: 0 0 28px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 20px; border-radius: 10px; text-decoration: none; font-weight: 750; font-size: .94rem; transition: transform .2s, box-shadow .2s; }
+    .button:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+    .button-primary { background: var(--navy); color: white; }
+    .button-secondary { border: 1px solid #cbd6e5; color: var(--navy); background: white; }
+    .portrait-wrap { justify-self: center; width: min(300px, 100%); aspect-ratio: 1; padding: 12px; border-radius: 50%; background: linear-gradient(145deg, #dce8fb, #fff); box-shadow: var(--shadow); }
+    .portrait-wrap img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 5px solid white; }
+    section { padding: 82px 0; }
+    .section-heading { max-width: 690px; margin-bottom: 34px; }
+    .section-heading h2 { color: var(--navy); font-size: clamp(1.9rem, 4vw, 2.65rem); line-height: 1.15; letter-spacing: -.04em; margin: 9px 0 12px; }
+    .section-heading p { color: var(--muted); margin: 0; }
+    .about-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 42px; align-items: start; }
+    .about-copy p { color: #536176; margin-top: 0; }
+    .highlight-panel { background: var(--soft); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; }
+    .highlight-panel h3 { color: var(--navy); margin: 0 0 12px; }
+    .highlight-panel ul { padding-left: 19px; margin: 0; color: #536176; }
+    .skills { background: var(--soft); }
+    .skill-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+    .skill { background: white; border: 1px solid var(--line); border-radius: 14px; padding: 20px 14px; text-align: center; color: var(--navy); font-weight: 800; box-shadow: 0 5px 18px rgba(16,37,68,.035); }
+    .skill span { display: block; color: var(--muted); font-size: .78rem; font-weight: 500; margin-top: 5px; }
+    .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .project-card { overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: white; box-shadow: 0 8px 28px rgba(16,37,68,.055); transition: transform .2s, box-shadow .2s; }
+    .project-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .project-card img { display: block; width: 100%; height: 190px; object-fit: cover; background: var(--soft); }
+    .project-body { padding: 20px; }
+    .project-body h3 { color: var(--navy); margin: 0 0 7px; font-size: 1.12rem; }
+    .project-body p { color: var(--muted); margin: 0 0 15px; font-size: .92rem; }
+    .project-link { color: var(--blue); text-decoration: none; font-weight: 800; font-size: .9rem; }
+    .project-link:hover { text-decoration: underline; }
+    .cta { background: var(--navy); color: white; text-align: center; }
+    .cta .eyebrow { color: #a9c7ff; }
+    .cta h2 { font-size: clamp(1.9rem, 4vw, 2.7rem); line-height: 1.15; margin: 10px 0 14px; letter-spacing: -.04em; }
+    .cta p { color: #d4deeb; max-width: 660px; margin: 0 auto 25px; }
+    .cta .button-primary { background: white; color: var(--navy); }
+    .cta .button-secondary { color: white; border-color: #6d809b; background: transparent; }
+    footer { padding: 25px 0; color: var(--muted); font-size: .88rem; text-align: center; border-top: 1px solid var(--line); }
+    footer a { color: var(--navy); font-weight: 700; text-decoration: none; }
+    @media (max-width: 850px) {
+      .hero-grid, .about-grid { grid-template-columns: 1fr; }
+      .portrait-wrap { grid-row: 1; width: 220px; }
+      .hero { padding: 60px 0; }
+      .project-grid { grid-template-columns: repeat(2, 1fr); }
+      .skill-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 620px) {
+      .container { width: min(100% - 30px, 1120px); }
+      .nav { min-height: 66px; flex-wrap: wrap; padding: 12px 0; }
+      .menu-button { display: block; }
+      .nav-links { display: none; width: 100%; flex-direction: column; align-items: flex-start; gap: 14px; padding: 8px 0 12px; }
+      .nav-links.open { display: flex; }
+      section { padding: 62px 0; }
+      .project-grid { grid-template-columns: 1fr; }
+      .skill-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-copy { font-size: 1rem; }
+      .portrait-wrap { width: 185px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#home">RUTH YAKUBU</a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <nav class="nav-links" id="nav-links" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-		<!-- Header -->
-			<div id="header">
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Welcome to my portfolio</div>
+          <h1>Hi, I'm Ruth Yakubu.</h1>
+          <h2>Data Analyst | Business Intelligence Professional</h2>
+          <p class="hero-copy">I turn data into clear insights that help people and organisations understand performance, identify opportunities and make better-informed decisions. Explore my work across data analysis and business intelligence.</p>
+          <div class="actions">
+            <a class="button button-primary" href="#projects">Explore my projects</a>
+            <a class="button button-secondary" href="https://flowcv.com/resume/t95bqtpn93ng" target="_blank" rel="noopener">View my resume</a>
+          </div>
+        </div>
+        <div class="portrait-wrap">
+          <img src="images/MY%20PIX.JPG" alt="Portrait of Ruth Yakubu">
+        </div>
+      </div>
+    </section>
 
-				<div class="top">
+    <section id="about">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">A little about me</div>
+          <h2>Connecting data, business questions and practical decisions.</h2>
+          <p>I combine analytical skills with an understanding of business needs and a passion for making data concepts easier to understand.</p>
+        </div>
+        <div class="about-grid">
+          <div class="about-copy">
+            <p>I'm Ruth Yakubu, a Data Analyst and Business Intelligence Professional with an interest in transforming raw data into useful information. My work involves exploring datasets, cleaning and analysing information, identifying patterns, and communicating findings through clear reports and visualisations.</p>
+            <p>I have worked with datasets including flight ticket pricing data with more than 300,000 rows, using analytical tools to explore trends and present insights. I also enjoy helping learners build confidence in data analytics through practical explanations, exercises and project-based learning.</p>
+            <p>I value clear communication, thoughtful analysis and recommendations that connect findings to real-world questions.</p>
+          </div>
+          <aside class="highlight-panel">
+            <h3>What I bring</h3>
+            <ul>
+              <li>Data cleaning, preparation and analysis</li>
+              <li>SQL querying and data exploration</li>
+              <li>Dashboard development and reporting</li>
+              <li>Business-focused insight communication</li>
+              <li>Data analytics teaching and mentorship</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
 
-					<!-- Logo -->
-						<div id="logo">
-							<span class="image avatar48"><img src="images/MY PIX.JPG" alt="" /></span>
-							<h1 id="title">Ruth Yakubu</h1>
-							<p>Data Analyst Expert</p>
-						</div>
+    <section class="skills" id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Tools &amp; capabilities</div>
+          <h2>Tools I use to work with data</h2>
+          <p>My toolkit supports data preparation, analysis, visualisation and communication.</p>
+        </div>
+        <div class="skill-grid">
+          <div class="skill">SQL<span>Querying &amp; exploration</span></div>
+          <div class="skill">Power BI<span>Dashboards &amp; reporting</span></div>
+          <div class="skill">Excel<span>Analysis &amp; reporting</span></div>
+          <div class="skill">Python<span>Data analysis</span></div>
+          <div class="skill">Tableau<span>Data visualisation</span></div>
+        </div>
+      </div>
+    </section>
 
-					<!-- Nav -->
-						<nav id="nav">
-							<ul>
-								<li><a href="#top" id="top-link"><span class="icon solid fa-home">Intro</span></a></li>
-								<li><a href="#portfolio" id="portfolio-link"><span class="icon solid fa-th">Portfolio</span></a></li>
-								<li><a href="#about" id="about-link"><span class="icon solid fa-user">About Me</span></a></li>
-								<li><a href="#contact" id="contact-link"><span class="icon solid fa-envelope">Contact</span></a></li>
-							</ul>
-						</nav>
+    <section id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Selected work</div>
+          <h2>Explore my projects</h2>
+          <p>Browse projects by tool. Each collection opens my work on the relevant platform. I am continuing to build out detailed case studies and project explanations.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project-card">
+            <img src="images/PowerBI%20Project-1.png" alt="Power BI project preview">
+            <div class="project-body">
+              <h3>Power BI Projects</h3>
+              <p>Business intelligence, interactive dashboards and visual reporting.</p>
+              <a class="project-link" href="https://github.com/Ruttysmith/POWERBI-PROJECT" target="_blank" rel="noopener">View Power BI projects →</a>
+            </div>
+          </article>
+          <article class="project-card">
+            <img src="images/SQL%20Project-1.png" alt="SQL project preview">
+            <div class="project-body">
+              <h3>SQL Projects</h3>
+              <p>Querying, data exploration and analysis using SQL.</p>
+              <a class="project-link" href="https://github.com/Ruttysmith/SQL-PROJECTS" target="_blank" rel="noopener">View SQL projects →</a>
+            </div>
+          </article>
+          <article class="project-card">
+            <img src="images/Excel%20Project-1.png" alt="Excel project preview">
+            <div class="project-body">
+              <h3>Excel Projects</h3>
+              <p>Spreadsheet-based analysis, reporting and data preparation.</p>
+              <a class="project-link" href="https://github.com/Ruttysmith/EXCEL-PROJECTS" target="_blank" rel="noopener">View Excel projects →</a>
+            </div>
+          </article>
+          <article class="project-card">
+            <img src="images/Python%20Project-1.png" alt="Python project preview">
+            <div class="project-body">
+              <h3>Python Projects</h3>
+              <p>Data analysis and exploration using Python.</p>
+              <a class="project-link" href="https://github.com/Ruttysmith/PYTHON-PROJECTS" target="_blank" rel="noopener">View Python projects →</a>
+            </div>
+          </article>
+          <article class="project-card">
+            <img src="images/Tableau%20Project-1.png" alt="Tableau project preview">
+            <div class="project-body">
+              <h3>Tableau Projects</h3>
+              <p>Visual analytics and interactive data presentations.</p>
+              <a class="project-link" href="https://public.tableau.com/app/profile/rutty" target="_blank" rel="noopener">View Tableau projects →</a>
+            </div>
+          </article>
+          <article class="project-card">
+            <img src="images/R%20PROJECT.jpg" alt="R project preview">
+            <div class="project-body">
+              <h3>R Projects</h3>
+              <p>Explore my work and practice with the R programming language.</p>
+              <a class="project-link" href="https://github.com/Ruttysmith/R" target="_blank" rel="noopener">View R projects →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-				</div>
+    <section class="cta" id="contact">
+      <div class="container">
+        <div class="eyebrow">Let's connect</div>
+        <h2>Have a data project or opportunity in mind?</h2>
+        <p>I'm open to conversations about data analysis, business intelligence, collaboration and opportunities to create value with data.</p>
+        <div class="actions" style="justify-content:center">
+          <a class="button button-primary" href="https://github.com/Ruttysmith" target="_blank" rel="noopener">Connect on GitHub</a>
+          <a class="button button-secondary" href="https://public.tableau.com/app/profile/rutty" target="_blank" rel="noopener">View my Tableau profile</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-				<div class="bottom">
-
-					<!-- Social Icons -->
-						<ul class="icons">
-							<li><a href="https://x.com/ruthiedanalyst?s=21" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="https://www.facebook.com/share/15nKqj3kUB/?mibextid=wwXIfr" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-							<li><a href="https://github.com/Ruttysmith" class="icon brands fa-github"><span class="label">Github</span></a></li>
-							<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-							<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-						</ul>
-
-				</div>
-
-			</div>
-
-		<!-- Main -->
-			<div id="main">
-
-				<!-- Intro -->
-					<section id="top" class="one dark cover">
-						<div class="container">
-
-							<header>
-								<h3 class="alt">Hi! I'm <strong>Ruth Yakubu</strong>, a <a href="http://html5up.net/license"> Data </a> Analyst <br />
-									who loves turning complex data into clear, actionable insights. I use tools like SQL, Tableau, Excel and <a href="http://html5up.net"> PowerBI to uncover patterns and power smarter decisions</a>.</h2>
-								
-							</header>
-
-							<footer>
-								<a href="https://flowcv.com/resume/t95bqtpn93ng" class="button scrolly">RESUME</a>
-							</footer>
-
-						</div>
-					</section>
-
-				<!-- Portfolio -->
-					<section id="portfolio" class="two">
-						<div class="container">
-
-							<header>
-								<h2>Portfolio</h2>
-							</header>
-
-							<p>Take a look at my projects to see how I bring clarity to complexity, and feel free to connect.
-								I'm always open to data conversations, collaboration, and continuous learning.
-
-							</p>
-
-							<div class="row">
-								<div class="col-4 col-12-mobile">
-									<article class="item">
-										<a href="https://github.com/Ruttysmith/PYTHON-PROJECTS" class="image fit"><img src="images/Python Project-1.png" alt="" /></a>
-										<header>
-											<h3>PYTHON</h3>
-										</header>
-									</article>
-									<article class="item">
-										<a href="https://github.com/Ruttysmith/POWERBI-PROJECT" class="image fit"><img src="images/PowerBI Project-1.png" alt="" /></a>
-										<header>
-											<h3>POWERBI</h3>
-										</header>
-									</article>
-								</div>
-								<div class="col-4 col-12-mobile">
-									<article class="item">
-										<a href="https://github.com/Ruttysmith/SQL-PROJECTS" class="image fit"><img src="images/SQL Project-1.png" alt="" /></a>
-										<header>
-											<h3>SQL</h3>
-										</header>
-									</article>
-									<article class="item">
-										<a href="https://github.com/Ruttysmith/EXCEL-PROJECTS" class="image fit"><img src="images/Excel Project-1.png" alt="" /></a>
-										<header>
-											<h3>EXCEL</h3>
-										</header>
-									</article>
-								</div>
-								<div class="col-4 col-12-mobile">
-									<article class="item">
-										<a href="https://public.tableau.com/app/profile/rutty" class="image fit"><img src="images/Tableau Project-1.png" alt="" /></a>
-										<header>
-											<h3>TABLEAU</h3>
-										</header>
-									</article>
-									<article class="item">
-										<a href="https://github.com/Ruttysmith/R" class="image fit"><img src="images/R PROJECT.jpg" alt="" /></a>
-										<header>
-											<h3>R</h3>
-										</header>
-									</article>
-								</div>
-							</div>
-
-						</div>
-					</section>
-
-				<!-- About Me -->
-					<section id="about" class="three">
-						<div class="container">
-
-							<header>
-								<h2>About Me</h2>
-							</header>
-
-							<a href="#" class="image featured"><img src="images/RUTH.jpg" alt="" /></a>
-
-							<p>Hi, I’m Ruth Yakubu — Freelance Data Analyst | Sales Insight Strategist | Data Analytics Tutor<br />
-
-								I’m a data-driven problem solver with a passion for uncovering meaningful insights that empower smarter decisions. My background is a unique blend of sales expertise, analytics mastery, and a passion for educating others — which allows me to bridge the gap between business needs and technical solutions.
-								
-								I’ve worked with diverse datasets, including flight ticket pricing data with over 300,000+ rows, helping to derive trends, clean messy data, and visualize key insights using tools like SQL, Python, Excel, and Tableau. My work goes beyond just crunching numbers — I help businesses and individuals understand what the data is saying and how to act on it.<br />
-								
-								WHAT I DO<br />
-								1. Freelance Data Analysis<br />
-								As a freelance data analyst, I support startups, entrepreneurs, and business teams by transforming raw data into powerful stories. I analyze performance, optimize operations, and build dashboards that guide decision-making. Whether it's tracking sales performance, customer trends, or market behavior — I provide insights that lead to action.<br />
-								
-								2. Sales Insight & Business Strategy<br />
-								With a solid background in retail and direct sales, I understand how real-world business works. I apply analytics to solve real problems — identifying customer patterns, improving sales funnels, and boosting conversion rates. I know the numbers, and I know the people behind them.<br />
-								
-								3. Data Analytics Tutoring<br />
-								I’m passionate about helping others grow in their data journey. Through 1-on-1 sessions, online content, and community support, I break down complex analytics tools and concepts into digestible lessons. I specialize in helping beginners and business owners get comfortable with Excel, SQL, Python, and Tableau — turning confusion into confidence.<br />
-								
-								MY TOOLS & SKILLS<br />
-								SQL – for querying large datasets and uncovering trends<br />
-								
-								Python – for data cleaning, analysis, and automation<br />
-								
-								Excel & Google Sheets – for fast, flexible, and powerful business analysis<br />
-								
-								Tableau – for building dynamic dashboards and visuals<br />
-								
-								Data Storytelling – for communicating insights in clear, engaging ways<br />
-								
-								Sales Strategy – translating insights into business results<br />
-								
-								Teaching & Mentorship – nurturing future analysts and data-savvy professionals<br />
-								
-
-								WHY WORK WITH ME?<br />
-								You want more than charts — you want clarity and direction<br />
-								
-								You’re overwhelmed by messy data and need someone to simplify it<br />
-								
-								You want to upskill in analytics or teach your team the tools<br />
-								
-								You value collaboration, communication, and a data partner who understands business goals<br />
-								
-								Explore my projects, connect with me, or book a session.
-								</p>
-
-						</div>
-					</section>
-
-				<!-- Contact -->
-					<section id="contact" class="four">
-						<div class="container">
-
-							<header>
-								<h2>Contact</h2>
-							</header>
-
-							<p>Let’s Connect!
-								Whether you’re a small business owner, aspiring analyst, or startup founder — if you're ready to make smarter, data-driven decisions, I’m here to help.<br />
-
-Whether you want to learn data analytics, collaborate on a project, or need expert support to turn complex data into clear, actionable insights — I’d love to connect with you.
-
-Feel free to reach out via the form below or email me directly. I typically respond within 24 hours.<br />
-Let’s turn your data into something powerful — together.</p>
-
-							<form method="post" action="#">
-								<div class="row">
-									<div class="col-6 col-12-mobile"><input type="text" name="name" placeholder="Name" /></div>
-									<div class="col-6 col-12-mobile"><input type="text" name="email" placeholder="Email" /></div>
-									<div class="col-12">
-										<textarea name="message" placeholder="Message"></textarea>
-									</div>
-									<div class="col-12">
-										<input type="submit" value="Send Message" />
-									</div>
-								</div>
-							</form>
-
-						</div>
-					</section>
-
-			</div>
-
-		<!-- Footer -->
-			<div id="footer">
-
-				<!-- Copyright -->
-					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+  <footer>
+    <div class="container">© <span id="year"></span> Ruth Yakubu. All rights reserved.</div>
+  </footer>
+  <script>
+    const menuButton = document.querySelector('.menu-button');
+    const navLinks = document.querySelector('.nav-links');
+    menuButton.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuButton.setAttribute('aria-expanded', 'false');
+      });
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
